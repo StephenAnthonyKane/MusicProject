@@ -11,7 +11,7 @@ export class LoginComponent{
   private clientId: string = "10ce89cd71244a4b866a20bcf768a81e";
   private redirect_uri: string = "http://localhost:4200/callback";
   private scope: string = "user-read-private user-read-email";
-  private show_dialog: string = "true"
+  private show_dialog: string = "false"
 
   spotifyLogin(){
     window.location.href = "https://accounts.spotify.com/authorize?response_type="+this.response_type+

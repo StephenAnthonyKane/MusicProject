@@ -1,3 +1,18 @@
-<p>
-  dashboard works!
-</p>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="ArtistSearchInput">Search Artist</label>
+      <input type="text" class="form-control" name="searchStr" [(ngModel)]="searchStr" (keyup)="searchArtist()" placeholder="Search Song ..."/>
+    </div>
+  </form>
+
+  <div *ngIf="searchArtistRes">
+    <div *ngFor="let res of searchArtistRes">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>{{res.name}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
