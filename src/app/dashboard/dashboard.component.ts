@@ -16,14 +16,14 @@ export class DashboardComponent implements OnInit {
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    this.token = sessionStorage.getItem("access_token");
+    this.token = sessionStorage.getItem('access_token');
   }
 
-  searchArtist(){
-    this.spotifyService.searchMusic(this.searchStr, "artist", this.token)
+  searchArtist() {
+    this.spotifyService.searchMusic(this.searchStr, 'artist', this.token)
     .subscribe(result => {
-      this.searchArtistRes = result["artists"].items;
-    })
+      this.searchArtistRes = result['artists'].items;
+    });
   }
 
 }
