@@ -6,13 +6,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: "", component: LoginComponent
+    path: '', component: LoginComponent
   },
   {
-    path: "callback", component: CallbackComponent
+    path: 'callback', component: CallbackComponent
   },
   {
-    path: "dashboard", component: DashboardComponent
+    path: 'dashboard', component: DashboardComponent
   }
 ];
 

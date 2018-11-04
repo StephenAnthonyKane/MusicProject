@@ -14,16 +14,16 @@ export class CallbackComponent implements OnInit {
 
   ngOnInit() {
     this.route.fragment.subscribe(frag => {
-      if(this.route.snapshot.fragment){
-        if(sessionStorage.getItem("access_token")){
-          sessionStorage.removeItem("access_token");
+      if (this.route.snapshot.fragment) {
+        if (sessionStorage.getItem('access_token')) {
+          sessionStorage.removeItem('access_token');
         }
-        this.access_token = frag.substring(13, frag.search("&token_type"));
-        sessionStorage.setItem("access_token", this.access_token);
-        this.router.navigate(["/dashboard"]);
-      }else{
-        this.router.navigate([""]);
+        this.access_token = frag.substring(13, frag.search('&token_type'));
+        sessionStorage.setItem('access_token', this.access_token);
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['']);
       }
-    })
+    });
   }
 }

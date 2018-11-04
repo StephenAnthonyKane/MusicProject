@@ -13,8 +13,8 @@ export class DashboardComponent implements OnInit {
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    this.token = sessionStorage.getItem("access_token");
-    console.log("DashBoard");
+    this.token = sessionStorage.getItem('access_token');
+    console.log('DashBoard');
     console.log(this.token);
   }
 
