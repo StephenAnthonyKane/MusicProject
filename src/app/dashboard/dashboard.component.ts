@@ -12,11 +12,16 @@ export class DashboardComponent implements OnInit {
   private token: string;
   private searchStr: string;
   private searchArtistRes: Artist[];
+  private songs: object;
+  private playlistId: string;
+  private roomCode: string;
 
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    this.token = sessionStorage.getItem('access_token');
+    this.token = sessionStorage.getItem('accessToken');
+    this.playlistId = sessionStorage.getItem('playlistId');
+    this.roomCode = sessionStorage.getItem('roomCode');
   }
 
   searchArtist() {
@@ -26,4 +31,18 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  searchTrack() {
+    this.spotifyService.searchMusic(this.searchStr, 'track', this.token)
+    .subscribe(result => {
+      console.log(result['tracks']['items']);
+      this.songs = result['tracks'].items;
+    });
+  }
+
+  addToPlaylist(trackId) {
+    this.spotifyService.addToPlaylist(this.playlistId , trackId, this.token)
+    .subscribe(result => {
+      alert('Added');
+    });
+  }
 }
