@@ -1,3 +1,19 @@
-<p>
-  dashboard works!
-</p>
+<div class="container">
+  <h1>Room Code: {{roomCode}}</h1>
+  <form>
+    <div class="form-group">
+      <label for="ArtistSearchInput">Search Artist</label>
+      <input type="text" class="form-control" name="searchStr" [(ngModel)]="searchStr" (keyup)="searchTrack()" placeholder="Search Song ..." autocomplete="off"/>
+    </div>
+  </form>
+
+  <div *ngIf="songs">
+    <div *ngFor="let res of songs">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 (click)="addToPlaylist(res.uri)">{{res.name}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
