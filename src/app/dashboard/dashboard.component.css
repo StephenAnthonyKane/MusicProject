@@ -1,3 +1,40 @@
-.container {
-    margin: 20px;
+:host {
+    height: 100%;
+}
+
+div.container {
+    padding: 0;
+    /* margin: 0; */
+    background: #191414;
+    min-height: 100%;
+    position: relative;
+}
+
+div.form-group input {
+    outline: none !important;
+    padding: 1%;
+    background: #191414;
+    border: 0;
+}
+
+div.form-group {
+    margin: 2%;
+    border-bottom: 2px solid #1DB954;
+}
+
+::placeholder {
+    color: #FFFFFF;
+    opacity: .70;
+}
+
+nav h2{
+    margin: 2% 0%;
+}
+
+nav {
+    background: #302c2c !important;
+}
+
+img {
+    max-width: 20%;
 }

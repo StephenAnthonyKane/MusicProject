@@ -1,0 +1,32 @@
+:host {
+    height: 100%;
+}
+
+div.container {
+    background: #191414;
+    min-height: 100%;
+    position: relative;
+}
+
+div.container button {
+    background: #1DB954;
+    border: #1DB954;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    min-height: 7.5vh;
+    width: 25%;
+    min-width: 25vh;
+    font-size: 115%;
+    border-radius: 100px;
+}
+
+button.joinBtn {
+    transform: translate(-50%, 10%);
+}
+
+button.hostBtn {
+    transform: translate(-50%, -110%);
+}
+
