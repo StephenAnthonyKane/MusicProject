@@ -1,3 +1,24 @@
-<p>
-  dashboard works!
-</p>
+<div class="container">
+
+    <nav class="navbar navbar-dark bg-dark">
+      <h2>Room Code: {{roomCode}}</h2>
+    </nav>
+
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" name="searchStr" [(ngModel)]="searchStr" (keyup)="searchTrack()" placeholder="Search Song ..." autocomplete="off"/>
+    </div>
+  </form>
+
+  <div *ngIf="songs">
+    <ul *ngFor="let res of songs" class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-dark">
+          <div class="justify-content-between">
+              <img src={{res.album.images[0].url}}>
+            </div>
+            <h3>{{res.name}}</h3>
+            <p>{{res.album.artists[0].name}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

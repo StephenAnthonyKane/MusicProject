@@ -10,8 +10,10 @@ export class LoginComponent {
   private response_type = 'token';
   private clientId = '10ce89cd71244a4b866a20bcf768a81e';
   private redirect_uri = 'http://localhost:4200/callback';
-  private scope = 'user-read-private user-read-email';
-  private show_dialog = 'false';
+  private scope = 'user-read-private user-read-email playlist-read-private ' +
+                  'user-read-currently-playing playlist-read-collaborative ' +
+                  'playlist-modify-private playlist-read-private playlist-modify-public';
+  private show_dialog = 'true';
 
   spotifyLogin() {
     window.location.href = 'https://accounts.spotify.com/authorize?response_type=' + this.response_type +
