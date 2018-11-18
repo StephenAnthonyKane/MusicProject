@@ -56,6 +56,50 @@ export class SpotifyService {
     return this.http.post(this.requestUrl, this.params, this.httpHeader);
   }
 
+  removeFromPlaylist(playlistId: string, uri: string, accessToken: string){
+    this.requestUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks?uris=' + uri ;
+
+    this.httpHeader = {
+      headers: new HttpHeaders().set('Accept', 'application/json')
+                                .set('Content-Type', 'application/json')
+                                .set('Authorization', 'Bearer ' + accessToken)
+    };
+
+    this.params = {};
+
+    return this.http.delete(this.requestUrl, this.httpHeader);
+
+  }
+
+  getPlaylistTracks(playlistId: string, accessToken: string){
+    this.requestUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
+
+    this.httpHeader = {
+      headers: new HttpHeaders().set('Accept', 'application/json')
+                                .set('Content-Type', 'application/json')
+                                .set('Authorization', 'Bearer ' + accessToken)
+    };
+
+    this.params = {};
+
+    return this.http.get(this.requestUrl, this.httpHeader);
+  }
+
+  deletePlaylist(playlistId: string, accessToken: string){
+    this.requestUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/followers';
+    console.log(this.requestUrl);
+    
+    this.httpHeader = {
+      headers: new HttpHeaders().set('Accept', 'application/json')
+                                .set('Content-Type', 'application/json')
+                                .set('Authorization', 'Bearer ' + accessToken)
+    };
+
+    this.params = {};
+
+    return this.http.delete(this.requestUrl, this.httpHeader);
+  }
+
   getUserId(accessToken: string) {
     this.requestUrl = 'https://api.spotify.com/v1/me';
 

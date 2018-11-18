@@ -9,13 +9,19 @@ import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './login/callback/callback.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HostDashboardComponent } from './host-dashboard/host-dashboard.component';
+import { MusicControlsComponent } from './host-dashboard/music-controls/music-controls.component';
+import { PlaylistViewComponent } from './host-dashboard/playlist-view/playlist-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CallbackComponent,
-    DashboardComponent
+    DashboardComponent,
+    HostDashboardComponent,
+    MusicControlsComponent,
+    PlaylistViewComponent
   ],
   imports: [
     BrowserModule,

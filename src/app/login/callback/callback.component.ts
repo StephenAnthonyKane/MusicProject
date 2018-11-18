@@ -50,7 +50,7 @@ export class CallbackComponent implements OnInit {
         }
         sessionStorage.setItem('roomCode', this.playlistName);
         sessionStorage.setItem('playlistId', result['id']);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/playlistview']);
       });
     });
 
